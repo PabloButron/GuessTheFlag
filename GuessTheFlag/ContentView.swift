@@ -9,20 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HStack (){
-                Text("First")
-                Text("Second")
-                Text("Third")
-                }
-        HStack (){
-                Text("First")
-                Text("Second")
-                Text("Third")
-        }
-        HStack (){
-                Text("First")
-                Text("Second")
-                Text("Third")
+        Button (action: {
+            print("Edit button was taped ")
+        }) {
+            
+            HStack (spacing:10 ) {
+            Image (systemName: "pencil")
+            Text ("Edit")
+            }
         }
     }
 }
