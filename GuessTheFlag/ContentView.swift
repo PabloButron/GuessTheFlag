@@ -8,17 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showingAlert = false
+    
     var body: some View {
-        Button (action: {
-            print("Edit button was taped ")
-        }) {
-            
-            HStack (spacing:10 ) {
-            Image (systemName: "pencil")
-            Text ("Edit")
-            }
+       
+        Button ("Show Alert"){
+            self.showingAlert = true
         }
-    }
+        .alert(isPresented: $showingAlert) {
+            Alert (title: Text("Heello There"), message: Text("Just another content alert in text form"), dismissButton: .default(Text("OK")))
+        }
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -26,3 +25,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+}
+
